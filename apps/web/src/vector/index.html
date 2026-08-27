@@ -2,16 +2,28 @@
 <html lang="en" style="height: 100%;">
   <head>
     <meta charset="utf-8">
-    <title>Element</title>
-    <link rel="apple-touch-icon" sizes="120x120" href="<%= require('../../res/vector-icons/120.png') %>">
-    <link rel="apple-touch-icon" sizes="144x144" href="<%= require('../../res/vector-icons/144.png') %>">
-    <link rel="apple-touch-icon" sizes="152x152" href="<%= require('../../res/vector-icons/152.png') %>">
-    <link rel="apple-touch-icon" sizes="180x180" href="<%= require('../../res/vector-icons/180.png') %>">
+    <title>Conv</title>
     <link rel="manifest" href="manifest.json">
     <meta name="referrer" content="no-referrer">
-    <link rel="icon" type="image/png" sizes="24x24" href="<%= require('../../res/vector-icons/24.png') %>">
-    <link rel="icon" type="image/png" sizes="144x144" href="<%= require('../../res/vector-icons/144.png') %>">
-    <link rel="icon" type="image/png" sizes="512x512" href="<%= require('../../res/vector-icons/512.png') %>">
+    <link rel="icon" type="image/png" sizes="32x32" href="<%= require('../../res/vector-icons/32.png') %>">
+    <link rel="icon" type="image/png" sizes="16x16" href="<%= require('../../res/vector-icons/16.png') %>">
+    <style>
+        :root, .cpd-theme-light, .cpd-theme-light.cpd-theme-light {
+            /* Palette basée sur #0d1641 (du plus clair au plus foncé) */
+            --cpd-color-gradient-action-stop1: #2c52d4 !important; /* Bleu clair (survol/interactions) */
+            --cpd-color-gradient-action-stop2: #1e3b9f !important; /* Bleu principal (boutons) */
+            --cpd-color-gradient-action-stop3: #162870 !important; /* Bleu sombre (transition) */
+            --cpd-color-gradient-action-stop4: #0d1641 !important; /* Fond exact */
+            
+            --cpd-color-gradient-action-linear: linear-gradient(180deg, var(--cpd-color-gradient-action-stop1) 0%, var(--cpd-color-gradient-action-stop2) 33%, var(--cpd-color-gradient-action-stop3) 66%, var(--cpd-color-gradient-action-stop4) 100%) !important;
+            
+            /* Écrasement du vert partout ailleurs avec ces nouvelles teintes */
+            --cpd-color-green-500: #2c52d4 !important;
+            --cpd-color-green-700: #1e3b9f !important;
+            --cpd-color-green-900: #162870 !important;
+            --cpd-color-green-1100: #0d1641 !important;
+        }
+    </style>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="apple-mobile-web-app-title" content="Element">
     <meta name="application-name" content="Element">

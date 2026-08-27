@@ -19,12 +19,14 @@ WORKDIR /src
 
 # Install dependencies
 COPY --parents package.json pnpm-lock.yaml pnpm-workspace.yaml patches scripts **/package.json /src/
+COPY .git /src/.git
 RUN pnpm install --frozen-lockfile
-RUN --mount=type=bind,source=.git,target=/src/.git /src/scripts/docker-link-repos.sh
+RUN /src/scripts/docker-link-repos.sh
 
-# Build
-COPY --link --exclude=.git --exclude=apps/web/docker . /src
-RUN --mount=type=bind,source=.git,target=/src/.git /src/scripts/docker-package.sh
+# # Build
+COPY --link --exclude=apps/web/docker . /src
+RUN echo 'echo "branding"' > /src/scripts/get-version-from-git.sh && \
+    /src/scripts/docker-package.sh
 
 # Copy the config now so that we don't create another layer in the app image
 RUN cp /src/apps/web/config.sample.json /src/apps/web/webapp/config.json
