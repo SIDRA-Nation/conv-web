@@ -20,7 +20,7 @@ WORKDIR /src
 # Install dependencies
 COPY --parents package.json pnpm-lock.yaml pnpm-workspace.yaml patches scripts **/package.json /src/
 COPY .git /src/.git
-RUN pnpm install --frozen-lockfile
+RUN pnpm install --frozen-lockfile --network-concurrency 4
 RUN /src/scripts/docker-link-repos.sh
 
 # # Build
