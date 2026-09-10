@@ -66,7 +66,7 @@ jobs:
         name: Windows ${{ matrix.arch }}
         strategy:
             matrix:
-                arch: [x64, arm64]
+                arch: [x64]
         uses: ./.github/workflows/build_desktop_windows.yaml
         secrets: inherit # zizmor: ignore[secrets-inherit]
         with:
