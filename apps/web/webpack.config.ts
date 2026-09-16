@@ -56,13 +56,16 @@ if (!ogImageUrl) ogImageUrl = "https://app.element.io/themes/element/img/logos/o
 
 const cssThemes = {
     // CSS themes
-    "theme-legacy-light": "./res/themes/legacy-light/css/legacy-light.pcss",
-    "theme-legacy-dark": "./res/themes/legacy-dark/css/legacy-dark.pcss",
-    "theme-light": "./res/themes/light/css/light.pcss",
-    "theme-light-high-contrast": "./res/themes/light-high-contrast/css/light-high-contrast.pcss",
-    "theme-dark": "./res/themes/dark/css/dark.pcss",
-    "theme-light-custom": "./res/themes/light-custom/css/light-custom.pcss",
-    "theme-dark-custom": "./res/themes/dark-custom/css/dark-custom.pcss",
+    // "theme-legacy-light": "./res/themes/legacy-light/css/legacy-light.pcss",
+    // "theme-legacy-dark": "./res/themes/legacy-dark/css/legacy-dark.pcss",
+    // "theme-light": "./res/themes/light/css/light.pcss",
+    "theme-light-high-contrast": "./res/themes/conv-light-high-contrast/css/conv-light-high-contrast.pcss",
+    // "theme-dark": "./res/themes/dark/css/dark.pcss",
+    // "theme-light-custom": "./res/themes/light-custom/css/light-custom.pcss",
+    // "theme-dark-custom": "./res/themes/dark-custom/css/dark-custom.pcss",
+    //:tchap: use path from our project
+    "theme-light": "./res/themes/conv-light/css/conv-light.pcss",
+    "theme-dark": "./res/themes/conv-dark/css/conv-dark.pcss",
 };
 
 // See docs/customisations.md
