@@ -68,7 +68,11 @@ export default class WebPlatform extends BasePlatform {
         }
 
         navigator.serviceWorker.addEventListener("message", this.onServiceWorkerPostMessage);
-        await registration.update();
+        try {
+            await registration.update();
+        } catch (e) {
+            console.warn("Service worker update failed", e);
+        }
     }
 
     private handleServiceWorkerRegistrationError = (): void => {

@@ -34,6 +34,9 @@ const getDeviceType = (
     browser: UAParser.IBrowser,
     operatingSystem: UAParser.IOS,
 ): DeviceType => {
+    if (userAgent.includes("Tauri")) {
+        return DeviceType.Desktop;
+    }
     if (device.type === "mobile" || operatingSystem.name?.includes("Android") || userAgent.indexOf(IOS_KEYWORD) > -1) {
         return DeviceType.Mobile;
     }
@@ -79,7 +82,12 @@ export const parseUserAgent = (userAgent?: string): ExtendedDeviceInformation =>
             deviceType: DeviceType.Unknown,
         };
     }
-
+    if (userAgent.includes("Tauri")) {
+        return {
+        deviceType: DeviceType.Desktop,
+        client: "Tauri",
+        };
+    }
     const parser = new UAParser(userAgent);
 
     const browser = parser.getBrowser();
